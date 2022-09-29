@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'employee/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'employee/main.css' %}" />
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="">
+        <div class="row top-nav">
+            <div class="col col-4">Hello {{auth.username}}</div>
+            <div class="col col-4">HOLISTICA</div>
+            <div class="col col-4"></div>
+        </div>
+    </nav>
+    <section class="event-bar">
+        <div class="event-bar__title">Today's Events</div>
+
+        {% if events %}
+
+        <div class="row event-bar__header event-bar__row">
+            <div class="col">Subject</div>
+            <div class="col">Time</div>
+            <div class="col">Type</div>
+        </div>
+
+        {% for event in events %}
+        <div class="row event-bar__row">
+            <div class="col">{{event.subject}}</div>
+            <div class="col">{{event.time}}</div>
+            <div class="col">{{event.type}}</div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="row event-bar__row">
+            <div class="col event-bar__notes">No events yet.</div>
+        </div>
+        {% endif %}
+    </section>
+
+    {{hi}}
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+.event-bar__title {
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+}
+.event-bar__header {
+  font-weight: bold;
+}
+.event-bar__row {
+  border-bottom: 1px dotted #009911;
+}
+.event-bar__notes {
+  display: flex;
+  justify-content: center;
+}
+
+.top-nav {
+  position: sticky;
+  background-color: maroon;
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

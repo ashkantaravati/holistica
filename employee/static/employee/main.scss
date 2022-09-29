@@ -1,0 +1,30 @@
+@mixin flex-center {
+    @include flex();
+    justify-content: center;
+}
+
+@mixin flex {
+    display: flex;
+}
+
+.event-bar {
+    &__title {
+        @include flex-center();
+        background-color: bisque;
+    }
+    &__header {
+        font-weight: bold;
+    }
+    &__row {
+        border-bottom: 1px dotted #009911;
+    }
+    &__notes {
+        @include flex-center();
+    }
+}
+
+.top-nav {
+    position: sticky;
+    background-color: maroon;
+    color: white;
+}

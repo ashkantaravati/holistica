@@ -9,3 +9,7 @@ class Employee(models.Model):
     last_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     date_of_birth = models.DateField()
+
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
