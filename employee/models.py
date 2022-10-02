@@ -1,4 +1,3 @@
-from random import choices
 from django.db import models
 
 GENDER_CHOICES = (("F", "Female"), ("M", "Male"))
