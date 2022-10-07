@@ -1,13 +1,18 @@
 from django.contrib import admin
-from .models import Project
+from .models import Deliverable, Project
+
+
+class DeliverableInline(admin.TabularInline):
+    model = Deliverable
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    inlines = [DeliverableInline]
 
     list_display = (
-        "id",
         "title",
+        "total_progress",
         "age",
         "delay",
         "projected_duration",
