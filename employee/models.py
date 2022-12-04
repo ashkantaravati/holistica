@@ -15,7 +15,7 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.full_name
-
+#TODo : implement employee_status (hired,not_hired,staff,tech,...) + 
 
 class LeaveRequest(models.Model):
     class DurationType(models.IntegerChoices):
@@ -39,3 +39,28 @@ class LeaveRequest(models.Model):
     reason = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Employee_Performance (models.Model):
+    # Time, attendance, and leave 
+    employee = models.ForeignKey(
+        to=Employee, on_delete=models.CASCADE, related_name="leave_requests"
+    )
+    arrive_time = models.DateTimeField()
+    leave_time = models.DateTimeField()
+    attendance = models.DateTimeField()
+    def attendance(leave_time,arrive_time):
+        attendance = leave_time - arrive_time
+        return attendance
+
+class Employee_Finance (models.Model): 
+    pass
+
+class task ():
+    employee = models.ForeignKey(
+        to=Employee, on_delete=models.CASCADE, related_name="leave_requests"
+    )
+    # task_status,task_duration,task_start_date,task_end_date,
+
+class Team () : 
+    # Team_name, Team_Skill, Team_scope, team_members, team_objectives, team_tasks, 
+    pass
